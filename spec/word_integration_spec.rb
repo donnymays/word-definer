@@ -22,4 +22,12 @@ describe '#Word' do
       expect(page).to have_content('Word')
     end
   end
+
+  describe('create a word path', {:type => :feature}) do
+    it('creates a word and then goes to the word page') do
+      visit('/words')
+      click_on('Add a new word')
+      expect(page).to have_content("Make a new word") 
+    end
+  end
 end
