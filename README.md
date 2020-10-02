@@ -8,7 +8,7 @@ _2 October 2020_
 
 ## Setup/Installation Requirements
 - In terminal/command line, navigate into the directory where you would like to create a new Ruby project.
-- Clone this project using the 'git clone <filename>' command in terminal/command line while in the desired directory.
+- Clone this project using the 'git clone https://github.com/donnymays/word-definer.git' command in terminal/command line while in the desired directory.
 - Navigate to the cloned folder and run 'bundle' in your command line to download gem dependencies.
 - Run 'ruby app.rb' in the terminal while still in the root directory of the new project. 
 - Open a browser and type the localhost port that Sinatra gives in the terminal (ex:localhost:4567)
