@@ -21,4 +21,18 @@ describe '#Definition' do
       expect(page).to have_content('polygon')
     end
   end
+
+  describe('create a path for a specific definition', {:type => :feature}) do
+    it('displays a page for a specific definition') do
+      visit('/words')
+      click_on('Add a new word')
+      fill_in('word_name', :with => 'hexagon')
+      click_on('Make a new word')
+      click_on('hexagon')
+      fill_in('definition_name', :with => '6 sided polygon')
+      click_on('Add definition')
+      click_on('6 sided polygon')
+      expect(page).to have_content('Delete definition')
+    end
+  end
 end
