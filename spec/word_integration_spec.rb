@@ -37,7 +37,7 @@ describe '#Word' do
       click_on('Add a new word')
       fill_in('word_name', :with => 'hexagon')
       click_on('Make a new word')
-      expect(page).to have_content('hexagon') 
+      expect(page).to have_content('Hexagon') 
     end
   end
 
@@ -47,7 +47,7 @@ describe '#Word' do
       click_on('Add a new word')
       fill_in('word_name', :with => 'hexagon')
       click_on('Make a new word')
-      click_on('hexagon')
+      click_on('Hexagon')
       expect(page).to have_content('Word Name:')
     end
   end
@@ -58,7 +58,7 @@ describe '#Word' do
       click_on('Add a new word')
       fill_in('word_name', :with => 'polygon')
       click_on('Make a new word')
-      click_on('polygon')
+      click_on('Polygon')
       click_on('Edit word')
       expect(page).to have_content('Rename word')
     end
@@ -70,11 +70,11 @@ describe '#Word' do
       click_on('Add a new word')
       fill_in('word_name', :with => 'hexagon')
       click_on('Make a new word')
-      click_on('hexagon')
+      click_on('Hexagon')
       click_on('Edit word')
       fill_in('name', :with => 'polygon')
       click_on('Update')
-      expect(page).to have_content('polygon')
+      expect(page).to have_content('Polygon')
     end
   end
   
@@ -84,10 +84,24 @@ describe '#Word' do
       click_on('Add a new word')
       fill_in('word_name', :with => 'hexagon')
       click_on('Make a new word')
-      click_on('hexagon')
+      click_on('Hexagon')
       click_on('Edit word')
       click_on('Delete word')
       expect(page).to have_content('There are currently no words to display')
+    end
+  end
+
+  describe('sort words', {:type => :feature}) do
+    it('sorts words alphabetically') do
+      visit('/words')
+      click_on('Add a new word')
+      fill_in('word_name', :with => 'hexagon')
+      click_on('Make a new word')
+      click_on('Add a new word')
+      fill_in('word_name', :with => 'bagel')
+      click_on('Make a new word')
+      click_on('Sort Words Alphabetically')
+      expect(page).to have_content('Hexagon Bagel')
     end
   end
 end

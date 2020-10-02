@@ -21,7 +21,7 @@ get('/words') do
 end
 
 post('/words') do
-  name = params[:word_name]
+  name = params[:word_name].capitalize
   word = Word.new({:name => name, :id => nil})
   word.save()
   @words = Word.all
@@ -63,7 +63,7 @@ end
 
 patch('/words/:id') do
   @word = Word.find(params[:id].to_i)
-  @word.update(params[:name])
+  @word.update(params[:name].capitalize)
   @words = Word.all
   erb(:words)
 end
