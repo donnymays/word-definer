@@ -49,7 +49,7 @@ describe '#Word' do
       word2 = Word.new({:name => "green", :id => nil})
       word2.save()
       word1.delete()
-      expect(Word.all).to(eq([word1]))
+      expect(Word.all).to(eq([word2]))
     end
   end
 
