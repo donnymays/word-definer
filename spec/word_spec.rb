@@ -74,5 +74,4 @@ describe '#Word' do
       expect(Word.sort).to(eq([word2, word1, word3]))
     end
   end
-
 end

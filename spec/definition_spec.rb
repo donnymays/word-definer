@@ -98,5 +98,4 @@ describe '#Definition' do
       expect(definition.word()).to(eq(@word))
     end
   end
-
 end

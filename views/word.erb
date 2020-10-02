@@ -9,10 +9,7 @@
   <% else %>
     <p>There are no definitions listed for this word yet.</p>
   <% end %>
-  
-
 <h4>Add a definition:</h4>
-
 <form action="/words/<%= @word.id %>/definition" method="post">
   <div class="form-group">
     <label for="definition_name">definition</label>
@@ -20,7 +17,5 @@
   </div>
   <button type="submit" class="btn">Add definition</button>
 </form>
-
-
 <p><a href="/words/<%= @word.id %>/edit">Edit word</a></p>
 <a href="/words">Return to word list</a>

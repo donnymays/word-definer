@@ -37,20 +37,6 @@ get('/words/new') do
   erb(:new_word)
 end
 
-# get('/words/list') do 
-#   @word = Word.find(params[:id].to_i)
-#   @words = Word.all
-#   @definitions = Definition.all
-  
-#   word = Word.new({:name => name = params[:word_name], :id => nil})
-#   word.save()
-#   definition = Definition.new({:name => params[:definition_name], :word_id => @word.id, :id => nil})
-#   definition.save()
-  
-#   binding.pry
-#   erb(:word_list)
-# end
-
 get('/words/:id') do
   @word = Word.find(params[:id].to_i)
   erb(:word)
@@ -100,9 +86,3 @@ delete('/words/:id/definitions/:definition_id') do
   @word = Word.find(params[:id].to_i())
   erb(:word)
 end
-
-
-
-
-
-

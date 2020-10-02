@@ -1,7 +1,6 @@
 <h1>Word Definer!</h1>
 <h3>Let's have fun making up definitions for words!</h3>
 <hr>
-
 <% if @words.any? %>
   <ul>
     <% @words.each do |word| %>
@@ -11,12 +10,13 @@
 <% else %>
   <p>There are currently no words to display. Click below to start the fun!</p>
 <% end %>
-
 <a href="/words/new">Add a new word</a>
 <br>
 <br>
 <br>
-<form action='/words' method="post">
-  <input name="_method" type="hidden" value="patch">
-  <button type="submit">Sort Words Alphabetically</button>
-</form>
+<% if @words.length > 1 %>
+  <form action='/words' method="post">
+    <input name="_method" type="hidden" value="patch">
+    <button type="submit">Sort Words Alphabetically</button>
+  </form>
+<% end %>
