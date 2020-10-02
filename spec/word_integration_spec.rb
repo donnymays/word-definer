@@ -101,7 +101,7 @@ describe '#Word' do
       fill_in('word_name', :with => 'bagel')
       click_on('Make a new word')
       click_on('Sort Words Alphabetically')
-      expect(page).to have_content('Hexagon Bagel')
+      expect(page).to have_content('Bagel Hexagon')
     end
   end
 end
