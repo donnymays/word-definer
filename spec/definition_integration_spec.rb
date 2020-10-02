@@ -66,6 +66,4 @@ describe '#Definition' do
       expect(page).to have_content('There are no definitions listed')
     end
   end
-
-
 end

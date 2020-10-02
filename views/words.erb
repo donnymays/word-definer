@@ -13,4 +13,7 @@
 
 <a href="/words/new">Add a new word</a>
 <br>
-<a href="/words/list">See your words and definitions together!</a>
+<form action='/words' method="post">
+  <input name="_method" type="hidden" value="patch">
+  <button type="submit">Sort Words Alphabeticlly</button>
+</form>

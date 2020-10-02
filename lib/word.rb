@@ -30,6 +30,10 @@ class Word
     @@words[id]
   end
 
+  def self.sort
+    @words_sorted = @@words.values.sort_by {|word| word.name}
+  end
+
   def delete
     @@words.delete(self.id)
   end
