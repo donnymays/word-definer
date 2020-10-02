@@ -30,4 +30,14 @@ describe '#Word' do
       expect(page).to have_content("Make a new word") 
     end
   end
+
+  describe('form successfully submits to add a new word', {:type => :feature}) do
+    it('creates a new word on the /words page') do
+      visit('/words')
+      click_on('Add a new word')
+      fill_in('word_name', :with => 'hexagon')
+      click_on('Make a new word')
+      expect(page).to have_content('hexagon') 
+    end
+  end
 end

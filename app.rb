@@ -19,7 +19,7 @@ post('/words') do
   name = params[:word_name]
   word = Word.new({:name => name, :id => nil})
   word.save()
-  @words = word.all
+  @words = Word.all
   erb(:words)
 end
 
