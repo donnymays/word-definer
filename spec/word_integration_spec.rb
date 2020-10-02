@@ -77,4 +77,17 @@ describe '#Word' do
       expect(page).to have_content('polygon')
     end
   end
+  
+  describe('deletes a word', {:type => :feature}) do
+    it('deletes a word') do
+      visit('/words')
+      click_on('Add a new word')
+      fill_in('word_name', :with => 'hexagon')
+      click_on('Make a new word')
+      click_on('hexagon')
+      click_on('Edit word')
+      click_on('Delete word')
+      expect(page).to have_content('There are currently no words to display')
+    end
+  end
 end
