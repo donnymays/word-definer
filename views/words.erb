@@ -6,6 +6,15 @@
     <% @words.each do |word| %>
       <li><a href="/words/<%= word.id %>"><%= word.name %></a></li>
     <% end %>
+      <% if @word.definitions.any? %> 
+        <ul>
+          <% @word.definitions.each do |definition| %>
+          <li><a href="/words/<%= @word.id %>/definition/<%= definition.id %>"><%= definition.name %></a></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>There are no definitions listed for this word yet.</p>
+      <% end %>
   </ul>
 <% else %>
   <p>There are currently no words to display. Click below to start the fun!</p>
