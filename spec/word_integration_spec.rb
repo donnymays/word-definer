@@ -15,4 +15,11 @@ describe '#Word' do
       expect(page).to have_content('Word')
     end
   end
+
+  describe('create a /words path', {:type => :feature}) do
+    it('creates a landing page') do
+      visit('/words')
+      expect(page).to have_content('Word')
+    end
+  end
 end
