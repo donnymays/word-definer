@@ -58,7 +58,7 @@ describe '#Word' do
       word1 = Word.new({:name => "blue", :id => nil})
       word1.save()
       word1.update("green")
-      expect(word1.name).to(eq("blue"))
+      expect(word1.name).to(eq("green"))
     end
   end
 
