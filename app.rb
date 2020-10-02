@@ -1,3 +1,4 @@
+require('pry')
 require('sinatra')
 require('sinatra/reloader')
 require('./lib/word')

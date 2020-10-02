@@ -52,8 +52,8 @@ describe '#Definition' do
     end
   end
 
-  describe('update a definition', {:type => :feature}) do
-    it('updates a definition') do
+  describe('delete a definition', {:type => :feature}) do
+    it('deletes a definition') do
       visit('/words')
       click_on('Add a new word')
       fill_in('word_name', :with => 'hexagon')
@@ -63,7 +63,7 @@ describe '#Definition' do
       click_on('Add definition')
       click_on('6 sided polygon')
       click_on('Delete definition')
-      expect(page).to have_content('')
+      expect(page).to have_content('There are no definitions listed')
     end
   end
 
