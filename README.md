@@ -20,13 +20,23 @@ _The original instructions for the assignment include:_
 The Word Definer
 Make an application that contains a Word class. The homepage of the app should list all words. When a word is clicked, it should lead to a page with the word's definitions. Children should be able to add a word, and when viewing a word, be able to add, update or delete one or more definitions. This week you should deploy your application to Heroku so the kids can try it out!
 
-## Specifications
-| Spec     | Behavior | Input    | Output   |
+## Specifications for Words
+| Verb     | Route | CRUD Action    | Description   |
 | -------- | -------- | -------- | -------- |
-| 1 | Will check to see if strings are words based on presence of vowels | "bgf" | false |
-| 2 | Will check to see if two words are anagrams | "deal", "lead" | true |
-| 3 | Will check to see if two words are anagrams regardless of lettercase | "lEad", "deal" | true |
-| 4 | Will check to see it two words are anitgrams | "fly", "red | true |
+| GET | /words | READ | Displays a list of words |
+| GET | /words/:id | READ | Displays a page for a single word |
+| POST | /words | CREATE | Adds a new word |
+| PATCH | words/:id | UPDATE | Updates a single word |
+| DELETE | words/:id | DELETE | Deletes a word from the list |
+
+## Specifications for Definitions
+| Verb     | Route | CRUD Action    | Description   |
+| -------- | -------- | -------- | -------- |
+| GET | /words/:id/definition | READ | Displays a list of definitions for a word |
+| GET | /words/:id/definition/:definition_id | READ | Displays a page for a single definition |
+| POST | /words/:id/definition | CREATE | Adds a new definition |
+| PATCH | /words/:id/definitions/:definition_id | UPDATE | Updates a single definition |
+| DELETE | /words/:id/definitions/:definition_id | DELETE | Deletes a definition from the list |
 
 
 ## Known Bugs
