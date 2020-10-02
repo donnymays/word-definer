@@ -51,4 +51,16 @@ describe '#Word' do
       expect(page).to have_content('Word Name:')
     end
   end
+
+  describe('creates a word edit path', {:type => :feature}) do
+    it('creates a new view when edit word is clicked on') do
+      visit('/words')
+      click_on('Add a new word')
+      fill_in('word_name', :with => 'polygon')
+      click_on('Make a new word')
+      click_on('polygon')
+      click_on('Edit word')
+      expect(page).to have_content('Rename word')
+    end
+  end
 end
