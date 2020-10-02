@@ -12,6 +12,7 @@ _2 October 2020_
 - Navigate to the cloned folder and run 'bundle' in your command line to download gem dependencies.
 - Run 'ruby app.rb' in the terminal while still in the root directory of the new project. 
 - Open a browser and type the localhost port that Sinatra gives in the terminal (ex:localhost:4567)
+-To view the application in a browser visit => 'https://polar-brook-31348.herokuapp.com/'
 
 ## Description
 _This is a project for Week 2 of the Ruby block of Epicodus.  Prompt can be seen below._
