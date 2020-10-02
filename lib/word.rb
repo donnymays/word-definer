@@ -12,4 +12,12 @@ class Word
   def self.all
     @@words.values
   end
+
+  def ==(word_to_compare)
+    self.name == word_to_compare.name
+  end  
+  
+  def save 
+    @@words[id] = Word.new({:name => self.name, :id => self.id})
+  end
 end
