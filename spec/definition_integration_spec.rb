@@ -35,4 +35,20 @@ describe '#Definition' do
       expect(page).to have_content('Delete definition')
     end
   end
+
+  describe('update a definition', {:type => :feature}) do
+    it('updates a definition') do
+      visit('/words')
+      click_on('Add a new word')
+      fill_in('word_name', :with => 'hexagon')
+      click_on('Make a new word')
+      click_on('hexagon')
+      fill_in('definition_name', :with => '6 sided polygon')
+      click_on('Add definition')
+      click_on('6 sided polygon')
+      fill_in('name', :with => 'six sided polygon')
+      click_on('Update definition')
+      expect(page).to have_content('six')
+    end
+  end
 end
