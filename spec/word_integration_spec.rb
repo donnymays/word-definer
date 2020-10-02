@@ -40,4 +40,15 @@ describe '#Word' do
       expect(page).to have_content('hexagon') 
     end
   end
+
+  describe('creates a word/id path', {:type => :feature}) do
+    it('creates a new view when an individual word is clicked on') do
+      visit('/words')
+      click_on('Add a new word')
+      fill_in('word_name', :with => 'hexagon')
+      click_on('Make a new word')
+      click_on('hexagon')
+      expect(page).to have_content('Word Name:')
+    end
+  end
 end
