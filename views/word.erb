@@ -1,13 +1,13 @@
 <h1>Word Name: <%= @word.name%></h1>
 <h2>Definitions:</h2>
-<% if @word.definitions %>
+<% if @definitions.any? %>
     <ul>
       <% @word.definitions.each do |defintion| %>
         <li><a href="/words/<%= @word.id %>/definition/<%= defintion.id %>"><%= defintion.name %></a></li>
       <% end %>
     </ul>
   <% else %>
-    <p>There are no definition listed for this word yet.</p>
+    <p>There are no definitionsS listed for this word yet.</p>
   <% end %>
 
 <h4>Add a definition:</h4>

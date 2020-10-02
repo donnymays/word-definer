@@ -9,11 +9,13 @@ also_reload('lib/**/*.rb')
 
 get('/') do 
   @words = Word.all
+  @definitions = Definition.all
   erb(:words)
 end
 
 get('/words') do
   @words = Word.all
+  @definitions = Definition.all
   erb(:words)
 end
 
@@ -68,7 +70,7 @@ end
 patch('/words/:id/definitions/:definition_id') do
   @word = Word.find(params[:id].to_i())
   definition = Definition.find(params[:definition_id].to_i())
-  definition.update(params[:rename], @word.id)
+  definition.update(params[:name], @word.id)
   erb(:word)
 end
 
