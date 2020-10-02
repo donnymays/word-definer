@@ -42,7 +42,7 @@ describe '#Word' do
     end
   end
 
-  describe('.delete') do
+  describe('#delete') do
     it("deletes a word by id") do
       word1 = Word.new({:name => "blue", :id => nil})
       word1.save()
@@ -50,6 +50,15 @@ describe '#Word' do
       word2.save()
       word1.delete()
       expect(Word.all).to(eq([word2]))
+    end
+  end
+
+  describe('#update') do
+    it("updates a word's name") do
+      word1 = Word.new({:name => "blue", :id => nil})
+      word1.save()
+      word1.update("green")
+      expect(word1.name).to(eq("blue"))
     end
   end
 
