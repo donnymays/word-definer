@@ -1,5 +1,6 @@
 <h1>Word Name: <%= @word.name%></h1>
 <h2>Definitions:</h2>
+<hr>
 <% if @word.definitions.any? %>
     <ul>
       <% @word.definitions.each do |definition| %>
@@ -17,5 +18,6 @@
   </div>
   <button type="submit" class="btn">Add definition</button>
 </form>
+<hr>
 <p><a href="/words/<%= @word.id %>/edit">Edit word</a></p>
 <a href="/words">Return to word list</a>
